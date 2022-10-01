@@ -1,26 +1,24 @@
 import { NavLink } from 'react-router-dom';
+import { Menu } from 'antd';
 
-export default function NavBar() {
+export default function NavBar({navCtrol}) {
+
+
+
     return (
-        <div className="nav-bar">
-            <NavLink to="/tableware" className={["nav-item", (navData) => navData.isActive ? "active" : "" ]}>
-                Tableware
-            </NavLink>
-            <NavLink to="/cookware" className={["nav-item", (navData) => navData.isActive ? "nav-item--active" : "" ]}>
-                Cookware
-            </NavLink>
-            <NavLink to="/home-accessories" className={["nav-item", (navData) => navData.isActive ? "nav-item--active" : "" ]}>
-                Home accessories
-            </NavLink>
-            <NavLink to="/lighting" className={["nav-item", (navData) => navData.isActive ? "nav-item--active" : "" ]}>
-                Lighting
-            </NavLink>
-            <NavLink to="/textile" className={["nav-item", (navData) => navData.isActive ? "nav-item--active" : "" ]}>
-                Textile
-            </NavLink>
-            <NavLink to="/furniture" className={["nav-item", (navData) => navData.isActive ? "nav-item--active" : "" ]}>
-                Furniture
-            </NavLink>
-        </div>
+
+            <Menu className={`nav ${navCtrol?"navbar_hi":"navbar_gone"}`}
+
+                mode="vertical"
+            >
+                <Menu.Item className='nav_title' key="tableware"><NavLink to='/tableware'>Tableware</NavLink></Menu.Item>
+                <Menu.Item className='nav_title' key="/cookware"><NavLink to='/cookware'>Cookware</NavLink></Menu.Item>
+                <Menu.Item className='nav_title' key="/home"><NavLink to='/home'>Home</NavLink></Menu.Item>
+                <Menu.Item className='nav_title' key="/lighting"><NavLink to='/lighting'>Lighting</NavLink></Menu.Item>
+                <Menu.Item className='nav_title' key="/furniture"><NavLink to='/furniture'>Furniture</NavLink></Menu.Item>
+                
+            </Menu>
+    
+
     );
 }
