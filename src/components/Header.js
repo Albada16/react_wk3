@@ -1,4 +1,3 @@
-import NavBar from "./NavBar";
 import { Link } from "react-router-dom"
 
 export default function Header({title}) {
@@ -9,13 +8,11 @@ export default function Header({title}) {
                {title}
             </h1>
          </Link>
-
          <p
             className="header-slogan">
             An example made by Create-React-App.
          </p>
          <hr className="hr-header-line" />
-         <NavBar />
       </div>
    );
 }
